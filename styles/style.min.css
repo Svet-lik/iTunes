@@ -755,10 +755,16 @@ input[type=range]:focus::-ms-fill-upper {
 
 /*# sourceMappingURL=style.min.css.map */
 
-.video-icon {
+.video-icon,
+.radio-icon {
     margin: 5px;
 }
 
-.video-volume {
+.video-volume,
+.radio-volume {
     max-width: 100px;
+}
+
+.fa-volume-down.radio-icon {
+    margin-left: 200px;
 }
