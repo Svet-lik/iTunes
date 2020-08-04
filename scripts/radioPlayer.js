@@ -52,14 +52,12 @@ export const radioPlayerInit = () => {
     radioStop.addEventListener('click', () => {
         if (audio.paused) { audio.play() } else { audio.pause() }
         changeIconPlay();
-    })
+    });
 
     radioVolume.addEventListener('input', () => {
         audio.volume = radioVolume.value / 100;
-    })
-
-    audio.volume = 0.5;
-    radioVolume.value = audio.volume * 100;
+        varTempVolume = audio.volume;
+    });
 
     faVolumeDown.addEventListener('click', () => {
         if ((varTempVolume < 1) && (varTempVolume > 0) && (audio.volume != 1)) {
@@ -89,5 +87,10 @@ export const radioPlayerInit = () => {
             audio.volume = 1;
             radioVolume.value = 100;
         }
-    })
-}
+    });
+
+    radioPlayerInit.stop = () => {
+        audio.pause();
+        changeIconPlay();
+    };
+};

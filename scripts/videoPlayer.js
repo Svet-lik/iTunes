@@ -107,7 +107,11 @@ export const videoPlayerInit = () => {
             videoPlayer.volume = 1;
             videoVolume.value = 100;
         }
-    })
+    });
 
-
+    videoPlayerInit.stop = () => {
+        if (!videoPlayer.paused) {
+            stopPlay();
+        }
+    };
 };
